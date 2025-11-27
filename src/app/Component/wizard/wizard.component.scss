@@ -1,0 +1,33 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.step {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #ccc;
+  color: #fff;
+  font-weight: bold;
+}
+
+.step.active {
+  background: #28a745;
+}
+
+.line {
+  width: 60px;
+  height: 4px;
+  background: #ccc;
+}
+
+.line.active {
+  background: #28a745;
+}
+
+.form-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}

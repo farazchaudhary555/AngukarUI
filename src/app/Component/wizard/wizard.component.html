@@ -1,0 +1,19 @@
+<!-- Step Indicator -->
+<div class="stepper">
+  <div class="step" [class.active]="step >= 1">Employee</div>
+  <div class="line" [class.active]="step >= 2"></div>
+  <div class="step" [class.active]="step >= 2">Client</div>
+  <div class="line" [class.active]="step >= 3"></div>
+  <div class="step" [class.active]="step >= 3">Product</div>
+</div>
+
+<!-- Load Forms Step-by-Step -->
+<div class="form-container">
+
+  <app-employee-form *ngIf="step === 1" (next)="nextStep()"></app-employee-form>
+
+  <app-client-form *ngIf="step === 2" (next)="nextStep()" (prev)="prevStep()"></app-client-form>
+
+  <app-product-form *ngIf="step === 3" (prev)="prevStep()"></app-product-form>
+
+</div>

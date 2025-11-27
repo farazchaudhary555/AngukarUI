@@ -1,0 +1,31 @@
+<div class="login-container">
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-box">
+
+    <h2>Login</h2>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" formControlName="email" placeholder="Enter your email">
+      <small *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="error">
+        Valid email is required
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="Enter your password">
+      <small *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error">
+        Minimum 4 characters required
+      </small>
+    </div>
+
+    <p *ngIf="errorMessage" class="server-error">{{ errorMessage }}</p>
+
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Please wait...' : 'Login' }}
+    </button>
+
+  </form>
+
+</div>

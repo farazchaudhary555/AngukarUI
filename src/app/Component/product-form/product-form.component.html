@@ -1,0 +1,69 @@
+<div class="container">
+
+  <!-- Employee Form -->
+  <form [formGroup]="productForm" (ngSubmit)="submit()" class="employee-form">
+
+    <h2>Product Details</h2>
+
+    <div class="row">
+
+      <div class="form-group">
+        <label>Product ID</label>
+        <input type="text" formControlName="prodId">
+      </div>
+
+      <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" formControlName="ProductName">
+      </div>
+
+      <div class="form-group">
+        <label>Product Price</label>
+        <input type="text" formControlName="ProductPrice">
+      </div>
+
+      <div class="form-group">
+        <label>Quantity</label>
+        <input type="text" formControlName="Qty">
+      </div>
+
+      <div class="form-group">
+        <label>Created By</label>
+        <input type="text" formControlName="createdBy">
+      </div>
+
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+ <button type="button" class="submit-btn" (click)="goBack()">Back</button>
+  </form>
+
+  <!-- Employee Table -->
+  <div class="table-wrapper" *ngIf="products.length > 0">
+    <h3>Product List</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Prod ID</th>
+          <th>Poduuct Name</th>
+          <th>Product Price</th>
+          <th>Qty</th>
+          <th>Created By</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let cli of products">
+          <td>{{ cli.prodId }}</td>
+          <td>{{ cli.productName }}</td>
+          <td>{{ cli.ProductPrice }}</td>
+          <td>{{ cli.Qty }}</td>
+          <td>{{ cli.createdBy }}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+</div>

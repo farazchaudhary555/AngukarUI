@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: false,\n  apiUrl: 'https://localhost:5001/api' // 👈 BASE URL\n  //apiUrl : 'https://uat.example.com/api',\n  //apiUrl : 'https://prod.example.com/api'\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
